@@ -13,6 +13,11 @@ if (file_exists('key.php'))
         _exec('pwd');
         _exec('git pull');
         _exec('git submodule update');
+		_exec('php yiic migrate --interactive=0');
+		_exec('chmod -R 0777 assets');
+		_exec('rm -rf assets');
+		_exec('mkdir assets');
+		_exec('chmod -R 0777 assets');
     }
 }
 
